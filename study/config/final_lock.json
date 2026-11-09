@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "status": "UNLOCKED",
+  "primary_comparator": null,
+  "included_methods": [
+    "B0",
+    "B1",
+    "B2",
+    "B3",
+    "B4",
+    "B5",
+    "M"
+  ],
+  "unavailable_methods": {},
+  "primary_policy_sha256": null,
+  "baseline_policy_sha256": {},
+  "primitive_library_sha256": null,
+  "contact_tolerance_n": null,
+  "contact_tolerance_rationale": null,
+  "matched_window_s": 10.0,
+  "full_episode_window_s": 120.0,
+  "minimum_stable_followup_s": 2.0,
+  "noninferiority_margin": 0.05,
+  "bootstrap_resamples": 10000,
+  "analysis_seed": 20261104,
+  "confirmatory_base_scenarios": {
+    "E6": 300,
+    "E7": 600
+  },
+  "sample_size_justification": null,
+  "multiplicity": "E6 hazard superiority -> E7 hazard superiority -> E7 task-success noninferiority; secondary families Holm",
+  "test_scenario_registry": null,
+  "decision_deadline_ms": null,
+  "stable_state_definition": null,
+  "task_success_definitions": null,
+  "sensor_error_model": null,
+  "exclusion_policy": null,
+  "freeze_timestamp_utc": null,
+  "physics_audit_variants": [
+    "nominal",
+    "contact_alt",
+    "timestep_alt"
+  ]
+}

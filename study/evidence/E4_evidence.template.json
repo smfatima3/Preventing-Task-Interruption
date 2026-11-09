@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "stage_id": "E4",
+  "decision": "pass",
+  "reviewer": null,
+  "findings": null,
+  "limitations": null,
+  "checks": {
+    "train_calibration_disjoint": null,
+    "outcome_labels_verified": null,
+    "three_training_seeds_saved": null,
+    "no_test_tuning": null,
+    "feature_access_equal": null
+  },
+  "artifacts": [
+    {
+      "role": "dataset_report",
+      "path": null,
+      "sha256": null
+    },
+    {
+      "role": "training_report",
+      "path": null,
+      "sha256": null
+    },
+    {
+      "role": "calibration_report",
+      "path": null,
+      "sha256": null
+    },
+    {
+      "role": "records",
+      "path": "results/raw/E4/records.jsonl",
+      "sha256": null
+    }
+  ],
+  "record_count_expected": null,
+  "deviations": []
+}

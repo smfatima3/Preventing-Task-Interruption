@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "stage_id": "E2",
+  "decision": "pass",
+  "reviewer": null,
+  "findings": null,
+  "limitations": null,
+  "checks": {
+    "nominal_success_at_least_80_percent_each_task": null,
+    "all_applicable_primitives_executable": null,
+    "common_holding_controller_validated": null,
+    "speed_benchmarked": null
+  },
+  "artifacts": [
+    {
+      "role": "readiness_report",
+      "path": null,
+      "sha256": null
+    },
+    {
+      "role": "primitive_report",
+      "path": null,
+      "sha256": null
+    },
+    {
+      "role": "throughput_report",
+      "path": null,
+      "sha256": null
+    },
+    {
+      "role": "records",
+      "path": "results/raw/E2/records.jsonl",
+      "sha256": null
+    }
+  ],
+  "record_count_expected": null,
+  "deviations": []
+}

@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "stage_id": "E6",
+  "decision": "pass",
+  "reviewer": null,
+  "findings": null,
+  "limitations": null,
+  "checks": {
+    "pairing_and_exposure_valid": null,
+    "all_primary_cells_accounted": null,
+    "primary_hazard_analysis_reproduced": null,
+    "subtype_and_severity_audited": null
+  },
+  "artifacts": [
+    {
+      "role": "matched_results",
+      "path": null,
+      "sha256": null
+    },
+    {
+      "role": "paired_analysis",
+      "path": null,
+      "sha256": null
+    },
+    {
+      "role": "causal_report",
+      "path": null,
+      "sha256": null
+    },
+    {
+      "role": "records",
+      "path": "results/raw/E6/records.jsonl",
+      "sha256": null
+    }
+  ],
+  "record_count_expected": null,
+  "deviations": []
+}

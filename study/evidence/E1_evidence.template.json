@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "stage_id": "E1",
+  "decision": "pass",
+  "reviewer": null,
+  "findings": null,
+  "limitations": null,
+  "checks": {
+    "contact_and_impulse_validated": null,
+    "grasp_and_placement_validated": null,
+    "replay_within_tolerance": null,
+    "no_privileged_policy_inputs": null,
+    "compute_time_advances": null
+  },
+  "artifacts": [
+    {
+      "role": "physics_report",
+      "path": null,
+      "sha256": null
+    },
+    {
+      "role": "replay_report",
+      "path": null,
+      "sha256": null
+    },
+    {
+      "role": "input_access_audit",
+      "path": null,
+      "sha256": null
+    },
+    {
+      "role": "records",
+      "path": "results/raw/E1/records.jsonl",
+      "sha256": null
+    }
+  ],
+  "record_count_expected": null,
+  "deviations": []
+}

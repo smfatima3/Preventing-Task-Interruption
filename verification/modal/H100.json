@@ -1,0 +1,10 @@
+{
+  "gpu_requested": "H100!",
+  "purpose": "E0 infrastructure only",
+  "started_at": "2026-11-09T06:42:53.594649+00:00",
+  "sandbox_id": "sb-n5zXEZ5FTVViVsWosFsiwe",
+  "stdout": "name, uuid, memory.total [MiB], driver_version\nNVIDIA H100 80GB HBM3, GPU-19313faf-c920-abea-3a7f-5470386a02b3, 81559 MiB, 610.57.04\n{\"python\": \"3.10.17\", \"mujoco\": \"3.3.6\"}\n",
+  "stderr": "",
+  "returncode": 0,
+  "finished_at": "2026-11-09T06:43:07.133090+00:00"
+}

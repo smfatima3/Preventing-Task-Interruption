@@ -1,0 +1,37 @@
+fatal: not a git repository (or any of the parent directories): .git
+test_contact_force_units_and_identities (test_instrumentation.InstrumentationTests) ... ok
+test_decision_delay_advances_physics_and_isolates_observation (test_instrumentation.InstrumentationTests) ... ok
+test_failed_attempt_is_retained_and_cannot_be_rewritten (test_instrumentation.InstrumentationTests) ... ok
+test_incomplete_component_state_is_rejected (test_instrumentation.InstrumentationTests) ... ok
+test_late_response_is_discarded (test_instrumentation.InstrumentationTests) ... ok
+test_replay_restores_physics_rng_and_mutable_hooks (test_instrumentation.InstrumentationTests) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.098s
+
+OK
+Fetching ... files: 0it [00:00, ?it/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Fetching ... files: 1it [00:01,  1.14s/it]Fetching ... files: 1it [00:01,  1.14s/it]
+Traceback (most recent call last):
+  File "<stdin>", line 4, in <module>
+  File "/workspace/simple/.venv/lib/python3.10/site-packages/gymnasium/envs/registration.py", line 734, in make
+    env = env_creator(**env_spec_kwargs)
+  File "/workspace/simple/src/simple/envs/loco_manipulation.py", line 33, in __init__
+    super().__init__(task, sim_mode, headless, *args, **kwargs)
+  File "/workspace/simple/src/simple/envs/base_dual_env.py", line 55, in __init__
+    self.task = TaskRegistry.make(task, *args, **kwargs)
+  File "/workspace/simple/src/simple/core/registry.py", line 28, in make
+    cls._instances[uid] = cls._registry[uid](*args, **kwargs)
+  File "/workspace/simple/src/simple/tasks/g1_wholebody_bend_pick_mp.py", line 221, in __init__
+    self._robot = RobotRegistry.make(**self.robot_cfg)
+  File "/workspace/simple/src/simple/core/registry.py", line 28, in make
+    cls._instances[uid] = cls._registry[uid](*args, **kwargs)
+  File "/workspace/simple/src/simple/robots/g1_wholebody.py", line 118, in __init__
+    self.amo_policy = AMO_Policy(robot_type="g1_dex3_wholebody", device="cuda",joint_names=self.joint_names)
+  File "/workspace/simple/src/simple/robots/policy/AMO_Policy.py", line 241, in __init__
+    self.policy_jit = _load_jit(os.path.join(BASE_DIR, "amo_jit.pt"), device)
+  File "/workspace/simple/src/simple/robots/policy/AMO_Policy.py", line 36, in _load_jit
+    _ensure_materialized(path)
+  File "/workspace/simple/src/simple/robots/policy/AMO_Policy.py", line 27, in _ensure_materialized
+    raise RuntimeError(
+RuntimeError: /workspace/simple/src/simple/robots/policy/amo_jit.pt is an unresolved Git LFS pointer (133 bytes) rather than the real checkpoint. Install git-lfs and run `git lfs pull` from the repo root to download it.

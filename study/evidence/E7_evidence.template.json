@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "stage_id": "E7",
+  "decision": "pass",
+  "reviewer": null,
+  "findings": null,
+  "limitations": null,
+  "checks": {
+    "full_episode_horizon_respected": null,
+    "all_primary_cells_accounted": null,
+    "safety_and_utility_reported": null,
+    "noninferiority_interpreted_correctly": null
+  },
+  "artifacts": [
+    {
+      "role": "episode_results",
+      "path": null,
+      "sha256": null
+    },
+    {
+      "role": "paired_analysis",
+      "path": null,
+      "sha256": null
+    },
+    {
+      "role": "utility_report",
+      "path": null,
+      "sha256": null
+    },
+    {
+      "role": "records",
+      "path": "results/raw/E7/records.jsonl",
+      "sha256": null
+    }
+  ],
+  "record_count_expected": null,
+  "deviations": []
+}

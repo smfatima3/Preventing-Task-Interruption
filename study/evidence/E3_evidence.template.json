@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "stage_id": "E3",
+  "decision": "pass",
+  "reviewer": null,
+  "findings": null,
+  "limitations": null,
+  "checks": {
+    "pilot_disjoint": null,
+    "feasibility_masks_shared": null,
+    "response_dependent_hazards_assessed": null,
+    "power_inputs_estimated": null
+  },
+  "artifacts": [
+    {
+      "role": "pilot_report",
+      "path": null,
+      "sha256": null
+    },
+    {
+      "role": "pilot_power_inputs",
+      "path": null,
+      "sha256": null
+    },
+    {
+      "role": "records",
+      "path": "results/raw/E3/records.jsonl",
+      "sha256": null
+    }
+  ],
+  "record_count_expected": null,
+  "deviations": []
+}

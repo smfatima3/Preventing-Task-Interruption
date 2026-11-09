@@ -1,0 +1,10 @@
+{
+  "name": "simple_native_repaired",
+  "gpu_requested": "RTX-PRO-6000",
+  "started_at": "2026-11-09T10:18:18.481595+00:00",
+  "purpose": "E0 runtime diagnostics / software tests only",
+  "sandbox_id": "sb-hvnj2prX78HglcSUJdWWhJ",
+  "returncode": 1,
+  "snapshot_image_id": "im-01M6ZX270TBSE6ZYSSW8VCFD1W",
+  "finished_at": "2026-11-09T10:18:34.743754+00:00"
+}

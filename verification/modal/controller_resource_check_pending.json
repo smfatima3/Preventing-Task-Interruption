@@ -1,0 +1,7 @@
+{
+  "name": "controller_resource_check",
+  "gpu_requested": "RTX-PRO-6000",
+  "started_at": "2026-11-09T10:23:31.069435+00:00",
+  "purpose": "E0 runtime diagnostics / software tests only",
+  "sandbox_id": "sb-4e9ePhVg45RIQcnvkKknKB"
+}

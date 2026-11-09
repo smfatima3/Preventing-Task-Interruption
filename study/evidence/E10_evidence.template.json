@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "stage_id": "E10",
+  "decision": "pass",
+  "reviewer": null,
+  "findings": null,
+  "limitations": null,
+  "checks": {
+    "held_out_factors_unseen": null,
+    "shift_subgroups_reported": null,
+    "combined_shift_retained": null
+  },
+  "artifacts": [
+    {
+      "role": "ood_results",
+      "path": null,
+      "sha256": null
+    },
+    {
+      "role": "ood_report",
+      "path": null,
+      "sha256": null
+    },
+    {
+      "role": "records",
+      "path": "results/raw/E10/records.jsonl",
+      "sha256": null
+    }
+  ],
+  "record_count_expected": null,
+  "deviations": []
+}

@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "stage_id": "E8",
+  "decision": "pass",
+  "reviewer": null,
+  "findings": null,
+  "limitations": null,
+  "checks": {
+    "ablations_isolate_information": null,
+    "same_primitives_and_compute_budget": null,
+    "secondary_multiplicity_reported": null
+  },
+  "artifacts": [
+    {
+      "role": "ablation_results",
+      "path": null,
+      "sha256": null
+    },
+    {
+      "role": "ablation_report",
+      "path": null,
+      "sha256": null
+    },
+    {
+      "role": "records",
+      "path": "results/raw/E8/records.jsonl",
+      "sha256": null
+    }
+  ],
+  "record_count_expected": null,
+  "deviations": []
+}

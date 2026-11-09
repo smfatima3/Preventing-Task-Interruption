@@ -1,0 +1,6 @@
+src/simple/robots/policy/amo_jit.pt 17819339 bytes
+src/simple/robots/policy/adapter_norm_stats.pt 1996 bytes
+src/simple/robots/policy/adapter_jit.pt 1661974 bytes
+Deleted /workspace/simple/data/scenes_hssd_107734119_175999932.zip
+Deleted /workspace/simple/data/assets_graspnet.zip
+HRS_NATIVE_ENV_RESET_OK {"nq": 78, "nv": 73, "time": 0.002, "obs_keys": ["joint_qpos", "front_stereo_left", "front_stereo_right", "head_stereo_left", "head_stereo_right"]}

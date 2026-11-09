@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "stage_id": "E14",
+  "decision": "pass",
+  "reviewer": null,
+  "findings": null,
+  "limitations": null,
+  "checks": {
+    "tables_reproduced_from_logs": null,
+    "negative_findings_retained": null,
+    "claims_match_evidence": null,
+    "anonymity_and_four_pages_checked": null,
+    "archive_and_provenance_verified": null
+  },
+  "artifacts": [
+    {
+      "role": "reproduction_report",
+      "path": null,
+      "sha256": null
+    },
+    {
+      "role": "claim_evidence_report",
+      "path": null,
+      "sha256": null
+    },
+    {
+      "role": "manuscript_audit",
+      "path": null,
+      "sha256": null
+    }
+  ],
+  "record_count_expected": 0,
+  "deviations": []
+}

@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "protocol_id": "HRS-interruption-v1",
+  "status": "DRAFT_UNEXECUTED",
+  "literature_cutoff": "2026-09-30",
+  "rq": "Can an action-conditioned runtime supervisor that models nearby people, carried-object dynamics, and observation-to-action delay reduce secondary physical hazards during humanoid task interruption, compared with strong stopping and semantic-fallback baselines, while preserving useful task completion?",
+  "tasks": [
+    "T1",
+    "T2",
+    "T3"
+  ],
+  "strata": [
+    "benign",
+    "avoidable",
+    "severe"
+  ],
+  "target_stratum_weights": {
+    "benign": 0.4,
+    "avoidable": 0.5,
+    "severe": 0.1
+  },
+  "planned_methods": [
+    "B0",
+    "B1",
+    "B2",
+    "B3",
+    "B4",
+    "B5",
+    "M"
+  ],
+  "training_seeds": [
+    11,
+    29,
+    47
+  ],
+  "analysis_seed": 20261104,
+  "task_definitions": {
+    "T1": "carry and place rigid box; person enters route",
+    "T2": "shelf retrieval; person enters arm sweep",
+    "T3": "confined transport; blocked route"
+  },
+  "primitives": [
+    "P_DECEL",
+    "P_RETREAT",
+    "P_PLACE",
+    "P_STABILIZE"
+  ],
+  "data_policy": {
+    "split_unit": "base scenario; disjoint layouts/object configurations/human trajectories as declared",
+    "synthetic_evidence_forbidden": true,
+    "primary_records_one_per_scenario_method": true,
+    "crashes_retained": true,
+    "post_lock_tuning_forbidden": true
+  },
+  "resources": {
+    "simulator_name": null,
+    "simulator_version": null,
+    "robot_model": null,
+    "nominal_controller_checkpoint": null,
+    "nominal_controller_sha256": null,
+    "asset_manifest": null,
+    "adapter_module": null
+  },
+  "design_rules": {
+    "contact_threshold_source": "E1 numerical validation; freeze at E5",
+    "horizon_source": "pilot; freeze at E5",
+    "baseline_selection_rule": "Among validated B1-B5 on development, minimize human hazard; break ties by safe success then latency. Declare tie tolerance before tuning. B0 is diagnostic only.",
+    "missing_data_rule": "Do not impute safety for missing outcomes. Retain failed attempts; confirmatory claims blocked until resolution or prespecified sensitivity analysis.",
+    "scope": "Simulation until separately validated transfer",
+    "effect_goals_are_not_results": true
+  }
+}

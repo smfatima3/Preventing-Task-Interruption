@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "stage_id": "E11",
+  "decision": "pass",
+  "reviewer": null,
+  "findings": null,
+  "limitations": null,
+  "checks": {
+    "three_seeds_compared_on_same_scenarios": null,
+    "primary_seed_reference_present": null,
+    "calibration_audit_independent": null,
+    "baseline_seed_uncertainty_disclosed": null
+  },
+  "artifacts": [
+    {
+      "role": "seed_results",
+      "path": null,
+      "sha256": null
+    },
+    {
+      "role": "calibration_results",
+      "path": null,
+      "sha256": null
+    },
+    {
+      "role": "seed_report",
+      "path": null,
+      "sha256": null
+    },
+    {
+      "role": "records",
+      "path": "results/raw/E11/records.jsonl",
+      "sha256": null
+    }
+  ],
+  "record_count_expected": null,
+  "deviations": []
+}

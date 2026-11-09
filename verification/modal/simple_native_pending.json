@@ -1,0 +1,7 @@
+{
+  "name": "simple_native",
+  "gpu_requested": "RTX-PRO-6000",
+  "started_at": "2026-11-09T06:53:22.647546+00:00",
+  "purpose": "E0 runtime diagnostics / software tests only",
+  "sandbox_id": "sb-ARNYV2FLfRksP19dnp6wcQ"
+}

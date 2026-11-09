@@ -1,0 +1,10 @@
+{
+  "gpu_requested": "RTX-PRO-6000",
+  "purpose": "E0 infrastructure only",
+  "started_at": "2026-11-09T06:42:53.596222+00:00",
+  "sandbox_id": "sb-uZr3rm1nO0BfSHdfAXXY8q",
+  "stdout": "name, uuid, memory.total [MiB], driver_version\nNVIDIA RTX PRO 6000 Blackwell Server Edition, GPU-7f899530-cfb1-ce4a-5bde-8300981abdac, 97887 MiB, 610.57.04\n{\"python\": \"3.10.17\", \"mujoco\": \"3.3.6\"}\n",
+  "stderr": "",
+  "returncode": 0,
+  "finished_at": "2026-11-09T06:43:06.026976+00:00"
+}

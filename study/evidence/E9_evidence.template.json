@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "stage_id": "E9",
+  "decision": "pass",
+  "reviewer": null,
+  "findings": null,
+  "limitations": null,
+  "checks": {
+    "actual_and_injected_delay_logged": null,
+    "time_never_paused_for_reasoning": null,
+    "all_four_delay_levels_present": null
+  },
+  "artifacts": [
+    {
+      "role": "delay_results",
+      "path": null,
+      "sha256": null
+    },
+    {
+      "role": "delay_report",
+      "path": null,
+      "sha256": null
+    },
+    {
+      "role": "records",
+      "path": "results/raw/E9/records.jsonl",
+      "sha256": null
+    }
+  ],
+  "record_count_expected": null,
+  "deviations": []
+}

@@ -1,0 +1,8 @@
+{
+  "name": "htb",
+  "purpose": "E0 upstream runtime validation only",
+  "started_at": "2026-11-09T06:44:15.574447+00:00",
+  "sandbox_id": "sb-pDMbUPjiYdRiLlLD6gikv2",
+  "returncode": 0,
+  "finished_at": "2026-11-09T06:45:37.429306+00:00"
+}

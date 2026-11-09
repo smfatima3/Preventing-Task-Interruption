@@ -1,0 +1,4 @@
+src/simple/robots/policy/adapter_norm_stats.pt 129 bytes
+src/simple/robots/policy/adapter_jit.pt 132 bytes
+src/simple/robots/policy/amo_jit.pt 133 bytes
+Deleted /workspace/simple/data/robots_g1.zip

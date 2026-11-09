@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "stage_id": "E5",
+  "decision": "pass",
+  "reviewer": null,
+  "findings": null,
+  "limitations": null,
+  "checks": {
+    "baselines_faithful_and_fair": null,
+    "primary_comparator_selected_on_development": null,
+    "test_sample_sizes_justified": null,
+    "all_test_choices_frozen": null,
+    "model_checkpoints_frozen": null
+  },
+  "artifacts": [
+    {
+      "role": "baseline_report",
+      "path": null,
+      "sha256": null
+    },
+    {
+      "role": "development_report",
+      "path": null,
+      "sha256": null
+    },
+    {
+      "role": "power_report",
+      "path": null,
+      "sha256": null
+    },
+    {
+      "role": "final_lock_report",
+      "path": null,
+      "sha256": null
+    },
+    {
+      "role": "records",
+      "path": "results/raw/E5/records.jsonl",
+      "sha256": null
+    }
+  ],
+  "record_count_expected": null,
+  "deviations": []
+}

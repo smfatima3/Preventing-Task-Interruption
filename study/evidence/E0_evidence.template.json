@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "stage_id": "E0",
+  "decision": "pass",
+  "reviewer": null,
+  "findings": null,
+  "limitations": null,
+  "checks": {
+    "scope_and_claims_defined": null,
+    "resources_and_licenses_verified": null,
+    "splits_and_exclusions_defined": null,
+    "baseline_scope_honest": null,
+    "contact_validation_procedure_defined": null
+  },
+  "artifacts": [
+    {
+      "role": "protocol_report",
+      "path": null,
+      "sha256": null
+    },
+    {
+      "role": "resource_manifest",
+      "path": null,
+      "sha256": null
+    }
+  ],
+  "record_count_expected": 0,
+  "deviations": []
+}

@@ -1,0 +1,420 @@
+[
+  {
+    "id": "E0",
+    "title": "Protocol and resources",
+    "depends_on": [],
+    "optional": false,
+    "planned_starting_rollouts": 0,
+    "split": "protocol",
+    "methods": [],
+    "checks": [
+      "scope_and_claims_defined",
+      "resources_and_licenses_verified",
+      "splits_and_exclusions_defined",
+      "baseline_scope_honest",
+      "contact_validation_procedure_defined"
+    ],
+    "artifact_roles": [
+      "protocol_report",
+      "resource_manifest"
+    ],
+    "requires_records": false,
+    "procedure": "Freeze the design and data-splitting procedure. Resolve the robot, trained nominal controller, scene assets and simulator. Record exact revisions, checkpoints, licenses and local hashes. Specify how E1 numerical tolerances and E3/E5 final choices will be derived.",
+    "outcome": "A reproducible design and an executable asset inventory; no physics results yet."
+  },
+  {
+    "id": "E1",
+    "title": "Physics, sensors and replay",
+    "depends_on": [
+      "E0"
+    ],
+    "optional": false,
+    "planned_starting_rollouts": 36,
+    "split": "validation",
+    "methods": [],
+    "checks": [
+      "contact_and_impulse_validated",
+      "grasp_and_placement_validated",
+      "replay_within_tolerance",
+      "no_privileged_policy_inputs",
+      "compute_time_advances"
+    ],
+    "artifact_roles": [
+      "physics_report",
+      "replay_report",
+      "input_access_audit"
+    ],
+    "requires_records": true,
+    "procedure": "Run 12 designed states per task. Cover known separations, contacts, grasp loss, stable placement, stopping and contact transitions. Repeat identical snapshots; compare poses, velocities, contacts, controller memory and RNG. Audit the sensor boundary.",
+    "outcome": "Valid physical measurements and repeatable branching. A failed replay or contact test blocks the causal study."
+  },
+  {
+    "id": "E2",
+    "title": "Nominal controller and primitives",
+    "depends_on": [
+      "E1"
+    ],
+    "optional": false,
+    "planned_starting_rollouts": 90,
+    "split": "readiness",
+    "methods": [],
+    "checks": [
+      "nominal_success_at_least_80_percent_each_task",
+      "all_applicable_primitives_executable",
+      "common_holding_controller_validated",
+      "speed_benchmarked"
+    ],
+    "artifact_roles": [
+      "readiness_report",
+      "primitive_report",
+      "throughput_report"
+    ],
+    "requires_records": true,
+    "procedure": "Run 30 clean nominal episodes per task, plus a documented matrix of every feasible primitive in each task. Keep failures. Confirm active grip/balance control while the supervisor computes. Measure actual throughput.",
+    "outcome": "At least 24 of 30 nominal successes per task, plus separate primitive feasibility evidence. This engineering threshold is not a certification standard."
+  },
+  {
+    "id": "E3",
+    "title": "Disjoint matched-state pilot",
+    "depends_on": [
+      "E2"
+    ],
+    "optional": false,
+    "planned_starting_rollouts": 300,
+    "split": "pilot",
+    "methods": [
+      "P_DECEL",
+      "P_RETREAT",
+      "P_PLACE",
+      "P_STABILIZE",
+      "B0"
+    ],
+    "checks": [
+      "pilot_disjoint",
+      "feasibility_masks_shared",
+      "response_dependent_hazards_assessed",
+      "power_inputs_estimated"
+    ],
+    "artifact_roles": [
+      "pilot_report",
+      "pilot_power_inputs"
+    ],
+    "requires_records": true,
+    "procedure": "Generate 20 new states per task and branch the four recovery primitives plus diagnostic continuation where feasible. Use shared snapshots and human motion. Register unavailable primitives before outcomes. Estimate event rates and paired discordance.",
+    "outcome": "A repeated physical failure mechanism, or a documented negative finding. If no useful mechanism exists, stop the superior-method route and revise the question before E4."
+  },
+  {
+    "id": "E4",
+    "title": "Prediction data and training",
+    "depends_on": [
+      "E3"
+    ],
+    "optional": false,
+    "planned_starting_rollouts": 5040,
+    "split": "train_calibration",
+    "methods": [
+      "P_DECEL",
+      "P_RETREAT",
+      "P_PLACE",
+      "P_STABILIZE"
+    ],
+    "checks": [
+      "train_calibration_disjoint",
+      "outcome_labels_verified",
+      "three_training_seeds_saved",
+      "no_test_tuning",
+      "feature_access_equal"
+    ],
+    "artifact_roles": [
+      "dataset_report",
+      "training_report",
+      "calibration_report"
+    ],
+    "requires_records": true,
+    "procedure": "Per task use 100 training and 40 calibration base states. Branch four modes under three physics perturbations, up to 5,040 rollouts. Fit three independent training seeds; calibrate on the separate calibration set. Record code, features, targets, losses and checkpoints.",
+    "outcome": "An auditable action-conditioned predictor, three trained artifacts, and held-out calibration. This package supplies the interface, not a pretrained predictor."
+  },
+  {
+    "id": "E5",
+    "title": "Baseline validation and final lock",
+    "depends_on": [
+      "E4"
+    ],
+    "optional": false,
+    "planned_starting_rollouts": 630,
+    "split": "development",
+    "methods": [
+      "B0",
+      "B1",
+      "B2",
+      "B3",
+      "B4",
+      "B5",
+      "M"
+    ],
+    "checks": [
+      "baselines_faithful_and_fair",
+      "primary_comparator_selected_on_development",
+      "test_sample_sizes_justified",
+      "all_test_choices_frozen",
+      "model_checkpoints_frozen"
+    ],
+    "artifact_roles": [
+      "baseline_report",
+      "development_report",
+      "power_report",
+      "final_lock_report"
+    ],
+    "requires_records": true,
+    "procedure": "Use 30 new states per task across all available configured methods. Select B* with the declared development rule. Validate adaptations, freeze checkpoints and candidate library, and finalize event tolerance, horizons, test sizes, analysis and missing-data policy.",
+    "outcome": "A final lock with B*, artifact hashes, horizons and powered or transparently precision-limited sample sizes. Missing B3 must be declared; it cannot be impersonated."
+  },
+  {
+    "id": "E6",
+    "title": "Confirmatory matched interventions",
+    "depends_on": [
+      "E5"
+    ],
+    "optional": false,
+    "planned_starting_rollouts": 2100,
+    "split": "matched_test",
+    "methods": [
+      "B0",
+      "B1",
+      "B2",
+      "B3",
+      "B4",
+      "B5",
+      "M"
+    ],
+    "checks": [
+      "pairing_and_exposure_valid",
+      "all_primary_cells_accounted",
+      "primary_hazard_analysis_reproduced",
+      "subtype_and_severity_audited"
+    ],
+    "artifact_roles": [
+      "matched_results",
+      "paired_analysis",
+      "causal_report"
+    ],
+    "requires_records": true,
+    "procedure": "Start from 100 independent held-out states per task (increase only before the E5 lock if justified). Run every registered arm from the identical snapshot. Keep the fixed post-trigger horizon. Compare introduced and prevented events against continuation, and M against B*.",
+    "outcome": "H1: paired risk difference, confidence interval, counts, component harm and repeated causal mechanisms. A hazard after stopping alone does not establish causation."
+  },
+  {
+    "id": "E7",
+    "title": "Full episodes and utility",
+    "depends_on": [
+      "E6"
+    ],
+    "optional": false,
+    "planned_starting_rollouts": 4200,
+    "split": "episode_test",
+    "methods": [
+      "B0",
+      "B1",
+      "B2",
+      "B3",
+      "B4",
+      "B5",
+      "M"
+    ],
+    "checks": [
+      "full_episode_horizon_respected",
+      "all_primary_cells_accounted",
+      "safety_and_utility_reported",
+      "noninferiority_interpreted_correctly"
+    ],
+    "artifact_roles": [
+      "episode_results",
+      "paired_analysis",
+      "utility_report"
+    ],
+    "requires_records": true,
+    "procedure": "Start with 200 new independent episodes per task across registered methods. Use the frozen episode budget and interruption schedule. Do not remove aborted tasks from the denominator. Test the predeclared hazard and utility hierarchy.",
+    "outcome": "H2: full-episode risk and success with paired uncertainty. Claim utility preservation only if the lower 95% bound on success(M)-success(B*) is greater than -0.05."
+  },
+  {
+    "id": "E8",
+    "title": "Mechanism ablations",
+    "depends_on": [
+      "E7"
+    ],
+    "optional": false,
+    "planned_starting_rollouts": 480,
+    "split": "ablation_test",
+    "methods": [
+      "M",
+      "M_NO_OBJECT",
+      "M_NO_HUMAN",
+      "M_NO_DELAY"
+    ],
+    "checks": [
+      "ablations_isolate_information",
+      "same_primitives_and_compute_budget",
+      "secondary_multiplicity_reported"
+    ],
+    "artifact_roles": [
+      "ablation_results",
+      "ablation_report"
+    ],
+    "requires_records": true,
+    "procedure": "Use 40 new states per task with M and the three ablations. Retrain ablations if required to avoid an out-of-distribution input corruption strawman; freeze that rule and training budget at E5.",
+    "outcome": "Human, object and delay information have measured component effects, or the mechanism is not supported. Report all ablations, not only significant ones."
+  },
+  {
+    "id": "E9",
+    "title": "Delay stress",
+    "depends_on": [
+      "E8"
+    ],
+    "optional": false,
+    "planned_starting_rollouts": 720,
+    "split": "delay_test",
+    "methods": [
+      "M",
+      "B*",
+      "M_NO_DELAY"
+    ],
+    "checks": [
+      "actual_and_injected_delay_logged",
+      "time_never_paused_for_reasoning",
+      "all_four_delay_levels_present"
+    ],
+    "artifact_roles": [
+      "delay_results",
+      "delay_report"
+    ],
+    "requires_records": true,
+    "procedure": "Use 20 new states per task at 0, 100, 300 and 600 ms additional delay, with M, B* and the no-delay ablation. The same base scenario spans delay levels; cluster inference by base scenario.",
+    "outcome": "A response curve over actual end-to-end delay, deadline misses and confidence intervals. Injected delay is additional to real measured latency."
+  },
+  {
+    "id": "E10",
+    "title": "Held-out distribution shifts",
+    "depends_on": [
+      "E9"
+    ],
+    "optional": false,
+    "planned_starting_rollouts": 360,
+    "split": "ood_test",
+    "methods": [
+      "M",
+      "B*"
+    ],
+    "checks": [
+      "held_out_factors_unseen",
+      "shift_subgroups_reported",
+      "combined_shift_retained"
+    ],
+    "artifact_roles": [
+      "ood_results",
+      "ood_report"
+    ],
+    "requires_records": true,
+    "procedure": "Use 60 new states per task across prespecified unseen layouts, payload/grasp changes and human trajectories, including a combined shift. Tag the shift type before execution.",
+    "outcome": "Evidence scoped to tested shifts, worst-stratum outcomes and failures; not universal generalization."
+  },
+  {
+    "id": "E11",
+    "title": "Seed and calibration audit",
+    "depends_on": [
+      "E10"
+    ],
+    "optional": false,
+    "planned_starting_rollouts": 240,
+    "split": "seed_audit",
+    "methods": [
+      "M"
+    ],
+    "checks": [
+      "three_seeds_compared_on_same_scenarios",
+      "primary_seed_reference_present",
+      "calibration_audit_independent",
+      "baseline_seed_uncertainty_disclosed"
+    ],
+    "artifact_roles": [
+      "seed_results",
+      "calibration_results",
+      "seed_report"
+    ],
+    "requires_records": true,
+    "procedure": "Use 120 independent audit states. Budget 240 extra rollouts for two additional M seeds only when the primary seed has already been run on these same states; otherwise budget 360 total. Include learned baseline seeds when consequential.",
+    "outcome": "Seed variability and fresh calibration diagnostics. Repeated seeds are not extra independent scenarios."
+  },
+  {
+    "id": "E12",
+    "title": "Physics and threshold sensitivity",
+    "depends_on": [
+      "E11"
+    ],
+    "optional": false,
+    "planned_starting_rollouts": 240,
+    "split": "physics_test",
+    "methods": [
+      "M",
+      "B*"
+    ],
+    "checks": [
+      "solver_timestep_variants_prespecified",
+      "random_and_boundary_cases_included",
+      "contact_threshold_sensitivity_reported"
+    ],
+    "artifact_roles": [
+      "physics_results",
+      "sensitivity_report"
+    ],
+    "requires_records": true,
+    "procedure": "Use 20 new states per task, including both random and boundary cases; evaluate two additional contact/timestep parameterizations with M and B*. Include a nominal reference on the same cases; reuse only if it truly exists.",
+    "outcome": "Whether contact event and impulse conclusions survive reasonable physics and measurement changes. Extra nominal runs add to the starting budget."
+  },
+  {
+    "id": "E13",
+    "title": "Optional transfer validation",
+    "depends_on": [
+      "E12"
+    ],
+    "optional": true,
+    "planned_starting_rollouts": 0,
+    "split": "transfer",
+    "methods": [],
+    "checks": [
+      "transfer_scope_declared",
+      "validation_protocol_safe_and_bounded",
+      "transfer_limits_reported"
+    ],
+    "artifact_roles": [
+      "transfer_report"
+    ],
+    "requires_records": false,
+    "procedure": "Optionally use an independent simulator or bounded hardware feasibility trials only after the preceding stages. Do not induce human contact. If resources are absent, explicitly skip with a reason.",
+    "outcome": "A separately labeled transfer result, or a transparent omission. Hardware is not required for the simulation-only claim."
+  },
+  {
+    "id": "E14",
+    "title": "Final audit and paper assembly",
+    "depends_on": [
+      "E13"
+    ],
+    "optional": false,
+    "planned_starting_rollouts": 0,
+    "split": "audit",
+    "methods": [],
+    "checks": [
+      "tables_reproduced_from_logs",
+      "negative_findings_retained",
+      "claims_match_evidence",
+      "anonymity_and_four_pages_checked",
+      "archive_and_provenance_verified"
+    ],
+    "artifact_roles": [
+      "reproduction_report",
+      "claim_evidence_report",
+      "manuscript_audit"
+    ],
+    "requires_records": false,
+    "procedure": "Regenerate results from sealed records. Inspect every failure and unresolved cell. Assemble a four-page anonymous paper with references outside the limit. Run the package audit and archive all manifests and provenance.",
+    "outcome": "A reproducible evidence package and appropriately scoped manuscript. No pass based merely on having code, a proposal or an attractive figure."
+  }
+]

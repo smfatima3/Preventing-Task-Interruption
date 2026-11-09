@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "stage_id": "E12",
+  "decision": "pass",
+  "reviewer": null,
+  "findings": null,
+  "limitations": null,
+  "checks": {
+    "solver_timestep_variants_prespecified": null,
+    "random_and_boundary_cases_included": null,
+    "contact_threshold_sensitivity_reported": null
+  },
+  "artifacts": [
+    {
+      "role": "physics_results",
+      "path": null,
+      "sha256": null
+    },
+    {
+      "role": "sensitivity_report",
+      "path": null,
+      "sha256": null
+    },
+    {
+      "role": "records",
+      "path": "results/raw/E12/records.jsonl",
+      "sha256": null
+    }
+  ],
+  "record_count_expected": null,
+  "deviations": []
+}

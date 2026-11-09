@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "stage_id": "E13",
+  "decision": "pass",
+  "reviewer": null,
+  "findings": null,
+  "limitations": null,
+  "checks": {
+    "transfer_scope_declared": null,
+    "validation_protocol_safe_and_bounded": null,
+    "transfer_limits_reported": null
+  },
+  "artifacts": [
+    {
+      "role": "transfer_report",
+      "path": null,
+      "sha256": null
+    }
+  ],
+  "record_count_expected": 0,
+  "deviations": []
+}

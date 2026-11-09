@@ -1,0 +1,7 @@
+{
+  "name": "isaac_l40s",
+  "gpu_requested": "L40S",
+  "started_at": "2026-11-09T06:53:22.647152+00:00",
+  "purpose": "E0 runtime diagnostics / software tests only",
+  "sandbox_id": "sb-FTk5ejV8cuHg7TCTKUxKpJ"
+}
